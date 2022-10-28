@@ -1,5 +1,4 @@
 # apiCRUDbasico
-Departamento com cadastro de funcionários, utilizando .Net
 
 BaseProject é um projeto que estou iniciando para desenvolver boas praticas, e conhecer estudar sua estrutura.
 
