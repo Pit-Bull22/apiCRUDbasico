@@ -11,7 +11,7 @@ namespace EvoSystemWebAPI.Data
         public DepartamentoContext(DbContextOptions<DepartamentoContext> options) : base(options) { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Password=Thamires10.;Persist Security Info=True;User ID=rafael02;Initial Catalog=EvoSystem;Data Source=DESKTOP-OIPJ5O5\\SQLEXPRESS\r\n");
+            optionsBuilder.UseSqlServer("Password=.;Persist Security Info=True;User ID=rafael02;Initial Catalog=EvoSystem;Data Source=DESKTOP-OIPJ5O5\\SQLEXPRESS\r\n");
         }
     }
 }
