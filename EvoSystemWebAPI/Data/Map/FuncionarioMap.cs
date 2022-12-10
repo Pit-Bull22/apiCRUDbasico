@@ -10,11 +10,8 @@ namespace EvoSystemWebAPI.Data.Map
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(250);
-            builder.Property(x => x.Foto).IsRequired().HasMaxLength(250);
-            builder.HasKey(x => x.Rg);
+            builder.Property(x => x.Foto);
             builder.Property(x => x.Departamento);
-
-
         }
     }
 }

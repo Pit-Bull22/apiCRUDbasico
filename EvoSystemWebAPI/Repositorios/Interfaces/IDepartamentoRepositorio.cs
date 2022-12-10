@@ -2,8 +2,12 @@
 
 namespace EvoSystemWebAPI.Repositorios.Interfaces
 {
-    public class IDepartamentoRepositorio
+    public interface IDepartamentoRepositorio
     {
-        //Task<List<DepartamentoModel>> BuscarTodosDepartamento();
+        Task<List<DepartamentoModel>> BuscarTodosDepartamentos();
+        Task<DepartamentoModel> BuscarPorId(int id);
+        Task<DepartamentoModel> Adicionar(DepartamentoModel departamento);
+        Task<DepartamentoModel> Atualizar(DepartamentoModel departamento, int id);
+        Task<bool> Apagar(int id);
     }
 }

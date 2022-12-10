@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xAByVXpvUAyH2lIT+yn2iVshrIH72tpsI14hr8Ieg3df0Xz8Y7sFhMQ6mrqT5tCONaX2hOLehJJm20qk3Xvmsg==",
+  "dgSpecHash": "6aJYgNVtPajzFj79vnHGHy3DkQCVXWN6Ap9UCKEF05B0mfeS+KRgJtrgOhuc5hfXfnrwleDdYPT6iJosdYPUqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tevez\\source\\EvoSystemWebAPI\\EvoSystemWebAPI\\EvoSystemWebAPI.csproj",
+  "projectFilePath": "C:\\Users\\tevez\\source\\apiCRUDbasico\\EvoSystemWebAPI\\EvoSystemWebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tevez\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\tevez\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

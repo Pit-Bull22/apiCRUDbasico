@@ -5,6 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(policyBuilder =>
+    policyBuilder.AddDefaultPolicy(policy =>
+        policy.WithOrigins("*").AllowAnyHeader().AllowAnyHeader())
+);
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -16,9 +21,15 @@ builder.Services.AddEntityFrameworkSqlServer()
   .AddDbContext<DepartamentoContext>(
     options => options.UseSqlServer()    
 );
-builder.Services.AddTransient<IFuncionarioRepositorio, FuncionarioRepositorio>();
+builder.Services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
+builder.Services.AddScoped<IDepartamentoRepositorio, DepartamentoRepositorio>();
 
 var app = builder.Build();
+
+app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -2232,11 +2232,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tevez\\source\\EvoSystemWebAPI\\EvoSystemWebAPI\\EvoSystemWebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\tevez\\source\\apiCRUDbasico\\EvoSystemWebAPI\\EvoSystemWebAPI.csproj",
       "projectName": "EvoSystemWebAPI",
-      "projectPath": "C:\\Users\\tevez\\source\\EvoSystemWebAPI\\EvoSystemWebAPI\\EvoSystemWebAPI.csproj",
+      "projectPath": "C:\\Users\\tevez\\source\\apiCRUDbasico\\EvoSystemWebAPI\\EvoSystemWebAPI.csproj",
       "packagesPath": "C:\\Users\\tevez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tevez\\source\\EvoSystemWebAPI\\EvoSystemWebAPI\\obj\\",
+      "outputPath": "C:\\Users\\tevez\\source\\apiCRUDbasico\\EvoSystemWebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tevez\\AppData\\Roaming\\NuGet\\NuGet.Config",

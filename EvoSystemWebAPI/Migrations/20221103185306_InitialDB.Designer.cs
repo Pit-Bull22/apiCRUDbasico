@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EvoSystemWebAPI.Migrations
 {
     [DbContext(typeof(DepartamentoContext))]
-    [Migration("20221028204044_Initial")]
-    partial class Initial
+    [Migration("20221103185306_InitialDB")]
+    partial class InitialDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

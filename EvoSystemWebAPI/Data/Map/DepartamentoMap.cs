@@ -11,7 +11,6 @@ namespace EvoSystemWebAPI.Data.Map
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(250);
             builder.Property(x => x.Sigla).IsRequired().HasMaxLength(3);
-
         }
     }
 }

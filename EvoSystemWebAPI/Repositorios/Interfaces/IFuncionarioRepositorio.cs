@@ -5,6 +5,7 @@ namespace EvoSystemWebAPI.Repositorios.Interfaces
     public interface IFuncionarioRepositorio
     {
         Task<List<FuncionarioModel>> BuscarTodosFuncionarios();
+        Task<List<FuncionarioModel>> BuscarPorDepartamento(int id);
         Task<FuncionarioModel> BuscarPorId(int id);
         Task<FuncionarioModel> Adicionar(FuncionarioModel funcionario);
         Task<FuncionarioModel> Atualizar(FuncionarioModel funcionario, int id);

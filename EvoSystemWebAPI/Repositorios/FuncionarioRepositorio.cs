@@ -17,6 +17,10 @@ namespace EvoSystemWebAPI.Repositorios
             return await _dbcontext.Funcionarios.FirstOrDefaultAsync(x => x.Id == id);
         }
 
+        public async Task<List<FuncionarioModel>> BuscarPorDepartamento(int id) 
+        {
+            return await _dbcontext.Funcionarios.Where(x => x.DepartamentoId == id).ToListAsync();
+        }
         public async Task<List<FuncionarioModel>> BuscarTodosFuncionarios()
         {
             return await _dbcontext.Funcionarios.ToListAsync();
@@ -41,6 +45,7 @@ namespace EvoSystemWebAPI.Repositorios
             funcionarioPorId.Nome = funcionario.Nome;
             funcionarioPorId.Rg = funcionario.Rg;
             funcionarioPorId.Foto = funcionario.Foto;
+            funcionarioPorId.DepartamentoId = funcionario.DepartamentoId;
 
             _dbcontext.Funcionarios.Update(funcionarioPorId);
             await _dbcontext.SaveChangesAsync();

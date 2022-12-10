@@ -1,4 +1,6 @@
 ﻿using EvoSystemWebAPI.Models;
+using EvoSystemWebAPI.Models.Request;
+using EvoSystemWebAPI.Models.Response;
 using EvoSystemWebAPI.Repositorios;
 using EvoSystemWebAPI.Repositorios.Interfaces;
 using Microsoft.AspNetCore.Http;
@@ -11,9 +13,11 @@ namespace EvoSystemWebAPI.Controllers
     public class FuncionarioController : ControllerBase
     {
         private readonly IFuncionarioRepositorio _funcionarioRepositorio;
-        public FuncionarioController(IFuncionarioRepositorio funcionarioRepositorio)
+        private readonly IDepartamentoRepositorio _departamentoRepositorio;
+        public FuncionarioController(IFuncionarioRepositorio funcionarioRepositorio, IDepartamentoRepositorio departamentoRepositorio)
         {
             _funcionarioRepositorio = funcionarioRepositorio;
+            _departamentoRepositorio = departamentoRepositorio;
         }
 
         [HttpGet]
@@ -30,11 +34,27 @@ namespace EvoSystemWebAPI.Controllers
             return Ok(funcionario);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<FuncionarioModel>> Cadastrar([FromBody] FuncionarioModel funcionarioModel)
+        [HttpGet("Departamento/{depId}")]
+        public async Task<ActionResult<List<FuncionarioModel>>> BuscarPorDepartamento(int depId)
         {
+            List<FuncionarioModel> funcionarios = await _funcionarioRepositorio.BuscarPorDepartamento(depId);
+            return Ok(funcionarios);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<FuncionarioResponse>> Cadastrar([FromBody] FuncionarioRequest request)
+        {
+            FuncionarioModel funcionarioModel = new(request.Nome, request.Foto, request.Rg, request.DepartamentoId);
+
             FuncionarioModel funcionario = await _funcionarioRepositorio.Adicionar(funcionarioModel);
-            return Ok(funcionario);
+
+            var departamentoModel = await _departamentoRepositorio.BuscarPorId(funcionario.DepartamentoId);
+
+            DepartamentoResponse departamentoResponse = new(departamentoModel.Id, departamentoModel.Nome, departamentoModel.Sigla);
+
+            FuncionarioResponse funcionarioResponse = new(funcionario.Nome, funcionario.Foto, funcionario.Rg, departamentoResponse);
+
+            return Ok(funcionarioResponse);
         }
 
         [HttpPut("{id}")]
